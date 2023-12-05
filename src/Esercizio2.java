@@ -1,6 +1,27 @@
 import java.util.*;
 
+
 public class Esercizio2 {
+    public static List<Integer> numeriPari (List<Integer> lista){
+        List <Integer> numeripari = new ArrayList();
+        for (int i=0; i<lista.size(); i++){
+
+            if (lista.get(i)%2==0){
+                numeripari.add(lista.get(i));
+            }
+        }
+        return numeripari ;
+    }
+    public static List<Integer> numeriDispari (List<Integer> lista){
+        List <Integer> numeridispari = new ArrayList();
+        for (int i=0; i<lista.size(); i++){
+
+            if (lista.get(i)%2!=0){
+                numeridispari.add(lista.get(i));
+            }
+        }
+        return numeridispari ;
+    }
     public static void main(String[] args) {
         int n = 0;
         boolean inputValido = false;
@@ -9,8 +30,7 @@ public class Esercizio2 {
         Random random = new Random();
 
         List <Integer> randomNumber = new ArrayList();
-        List <Integer> numeriPari = new ArrayList();
-        List <Integer> numeriDispari = new ArrayList();
+
         Scanner scanner = new Scanner(System.in);
         do {
             try {
@@ -51,17 +71,9 @@ public class Esercizio2 {
         System.out.println(randomNumber.get(0));
 
         //Nuova lista di numeri pari
-        for (int i=0; i<randomNumber.size(); i++){
 
-            if (randomNumber.get(i)%2==0){
-                numeriPari.add(randomNumber.get(i));
-            }
-            else{
-                numeriDispari.add(randomNumber.get(i));
-            }
-        }
-        System.out.println("Numeri pari della lista: "+numeriPari);
-        System.out.println("Numeri pari della lista: "+numeriDispari);
+        System.out.println("Numeri pari della lista: "+numeriPari(randomNumber));
+        System.out.println("Numeri pari della lista: "+numeriDispari(randomNumber));
 
 
     }
