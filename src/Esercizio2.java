@@ -27,13 +27,26 @@ public class Esercizio2 {
         return numeridispari ;
     }
 
+    //numeri casuali ordinati
+    public static List<Integer> randomNumber (List<Integer> lista, int n){
+        //Per numero casuale
+        Random random = new Random();
+
+
+    for (int i=0; i<n; i++){
+        int numeroCasuale = random.nextInt(100) + 1;
+        lista.add(numeroCasuale);
+    }
+        Collections.sort(lista);
+    return lista;
+    }
+
     //Main
     public static void main(String[] args) {
         int n = 0;
         boolean inputValido = false;
         boolean pari;
-        //Per numero casuale
-        Random random = new Random();
+
 
         List <Integer> randomNumber = new ArrayList();
 
@@ -61,18 +74,14 @@ public class Esercizio2 {
             //Finchè l'input è false ripetere il loop
         } while (!inputValido);
 
-        for (int i=0; i<n; i++){
-            int numeroCasuale = random.nextInt(100) + 1;
-            randomNumber.add(numeroCasuale);
-        }
+
         scanner.close();
 
-        //Ordinare la lista
-        Collections.sort(randomNumber);
-        System.out.println("List ordinata: " + randomNumber);
+        //Lista ordinata
+        System.out.println("List ordinata: " + randomNumber(randomNumber, n));
 
-        //Invertire la lista
-        Collections.sort(randomNumber, Collections.reverseOrder());
+        //Lista invertita
+        Collections.sort(randomNumber(randomNumber, n), Collections.reverseOrder());
         System.out.println("List non ordinata: " + randomNumber);
         System.out.println(randomNumber.get(0));
 
