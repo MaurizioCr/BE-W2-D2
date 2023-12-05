@@ -2,6 +2,8 @@ import java.util.*;
 
 
 public class Esercizio2 {
+
+    //Classe per i numeri pari
     public static List<Integer> numeriPari (List<Integer> lista){
         List <Integer> numeripari = new ArrayList();
         for (int i=0; i<lista.size(); i++){
@@ -12,6 +14,8 @@ public class Esercizio2 {
         }
         return numeripari ;
     }
+
+    //Classe per i numeri dispari
     public static List<Integer> numeriDispari (List<Integer> lista){
         List <Integer> numeridispari = new ArrayList();
         for (int i=0; i<lista.size(); i++){
@@ -22,6 +26,8 @@ public class Esercizio2 {
         }
         return numeridispari ;
     }
+
+    //Main
     public static void main(String[] args) {
         int n = 0;
         boolean inputValido = false;
@@ -70,7 +76,7 @@ public class Esercizio2 {
         System.out.println("List non ordinata: " + randomNumber);
         System.out.println(randomNumber.get(0));
 
-        //Nuova lista di numeri pari
+        //Nuova lista di numeri pari e dispari
 
         System.out.println("Numeri pari della lista: "+numeriPari(randomNumber));
         System.out.println("Numeri pari della lista: "+numeriDispari(randomNumber));
